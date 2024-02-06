@@ -159,6 +159,9 @@ public class Point {
     }
 
     public static double getPoint(Object uuid, boolean updata) {
+        if (PlayerPoint.getInstance() == null) {
+            return 0d;
+        }
         Player player;
         if (PlayerPoint.getInstance().isCanLoadSql()) {
             double d;
